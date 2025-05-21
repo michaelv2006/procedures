@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Procedimiento</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e0f2f1;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00796b;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #004d40;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #b2dfdb;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 25px;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Registrar Procedimiento (FHIR)</h1>
+  <form id="procedure-form">
+    <label for="patient-id">ID del Paciente:</label>
+    <input type="text" id="patient-id" required><br><br>
+
+    <label for="procedure-code">Código SNOMED (Procedimiento):</label>
+    <input type="text" id="procedure-code" placeholder="Ej: 168731009" required><br><br>
+
+    <label for="procedure-desc">Descripción:</label>
+    <input type="text" id="procedure-desc" placeholder="Ej: Radiografía de tórax" required><br><br>
+
+    <label for="date">Fecha:</label>
+    <input type="datetime-local" id="date" required><br><br>
+
+    <label for="practitioner-id">ID del Profesional:</label>
+    <input type="text" id="practitioner-id" required><br><br>
+
+    <label for="service-request-id">ID de la ServiceRequest:</label>
+    <input type="text" id="service-request-id"><br><br>
+
+    <label for="reason">Motivo (texto libre o código):</label>
+    <input type="text" id="reason"><br><br>
+
+    <label for="notes">Notas:</label>
+    <textarea id="notes"></textarea><br><br>
+
+    <button type="submit">Guardar Procedimiento</button>
+   </form>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
