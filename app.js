@@ -46,13 +46,13 @@ document.getElementById('procedure-form').addEventListener('submit', function (e
       : []
   };
   
-  console.log("FHIR Payload:", fhirServiceRequest);
+  console.log("FHIR Payload:", procedure);
 
   // Enviar la solicitud al backend (sin trailing slash)
   fetch('https://hl7-fhir-ehr-michael.onrender.com/procedures', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(fhirServiceRequest)
+    body: JSON.stringify(procedure)
   })
   .then(async response => {
     if (!response.ok) {
@@ -63,7 +63,7 @@ document.getElementById('procedure-form').addEventListener('submit', function (e
   })
   .then(data => {
     console.log('Success:', data);
-    alert('Service Request creado exitosamente! ID: ' + data._id);
+    alert('Procedimiento registrado exitosamente! ID: ' + data._id);
   })
   .catch(error => {
     console.error('Error:', error);
