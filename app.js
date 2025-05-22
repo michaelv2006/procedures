@@ -1,6 +1,14 @@
 document.getElementById('procedure-form').addEventListener('submit', function (e) {
   e.preventDefault();
 
+  const serviceRequestId = document.getElementById('service-request-id').value;
+
+  // Validación inicial en frontend
+  if (!serviceRequestId) {
+    alert("Debes ingresar un ID de ServiceRequest válido.");
+    return;
+  }
+
   const procedure = {
     resourceType: "Procedure",
     status: "completed",
