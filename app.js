@@ -49,7 +49,7 @@ document.getElementById('procedure-form').addEventListener('submit', function (e
   console.log("FHIR Payload:", procedure);
 
   // Enviar la solicitud al backend (sin trailing slash)
-  fetch('https://hl7-fhir-ehr-michael.onrender.com/procedure', {
+  fetch('https://hl7-fhir-ehr-michael.onrender.com/procedures', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(procedure)
